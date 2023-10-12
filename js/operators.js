@@ -54,7 +54,3 @@ console.log (6 % 3 === 0)
 
 console.log (5 % 2 !== 0)
 // true
-
-
-
-
