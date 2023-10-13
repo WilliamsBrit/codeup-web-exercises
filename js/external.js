@@ -1,3 +1,4 @@
+"use strict"
 console.log("Hello from external Javascript.")
 
 // Welcome Alert
@@ -6,7 +7,7 @@ alert("Welcome to my Website!")
 // Prompt for favorite color
 let userInput = prompt("What is your favorite color?")
 
-alert(`${userInput} is my favorite color too!`)
+alert(`Great, ${userInput} is my favorite color too!`)
 
 //Exercise 3 continuation
 
@@ -66,4 +67,3 @@ alert(`Your total weekly pay from Facebook is $${totalFacebook}`)
 let totalPay = totalGoogle + totalAmazon + totalFacebook
 alert(`Your weekly take-home pay is $${totalPay}`)
 //
-/
