@@ -116,8 +116,11 @@
 //         return total - (.50 * total)
 //     }else if (num === 5) {
 //         return total - (1.00 * total)
+//     }else {
+//         return "Invalid lucky number."
 //     }
 // }
+
 // console.log(calculateTotal(2,100))
 /**
  * TODO:
@@ -131,7 +134,7 @@
 // const luckyNumber = Math.floor(Math.random() * 6);
 //
 // let bill = prompt("What is your total bill amount?")
-// alert(`Your lucky number was ${luckyNumber}. Your price before discount was ${bill}. Your total after discount is ${calculateTotal(luckyNumber,bill)}`)
+// alert(`Your lucky number was ${luckyNumber}. Your price before discount was $${bill}. Your total after discount is $${calculateTotal(luckyNumber,bill)}`)
 
 /**
  * TODO:
@@ -152,27 +155,69 @@
  * HINT: The way we prompt for a value could be improved
  */
 
-let userConfirm =confirm("Would you like to enter a number?")
+// let userConfirm =confirm("Would you like to enter a number?")
+//
+// function userNum() {
+//     // does user want to play?
+//     if (userConfirm === true) {
+//         const getNumber = parseInt(prompt("Please enter a number."));
+//         // checks number data type
+//         if (!isNaN(getNumber) && typeof getNumber === "number") {
+//             // check if number is even or odd
+//             if (getNumber % 2 === 0) {
+//                 alert("The number is even.")
+//             }else {
+//                 alert("The number is odd.")
+//             }
+//             // alert for number + 100
+//             alert("The number plus 100 is " + (getNumber + 100))
+//
+//             // alert to find if it is positive or negative
+//
+//             if (Math.sign(getNumber) === 1) {
+//                 alert("The number is positive.")
+//             } else if (Math.sign(getNumber) === -1) {
+//                 alert("The number is negative")
+//             }
+//         }
+//
+//     }
+//     console.log(userConfirm)
+// }
+//
+// console.log(userNum())
 
-function userNum() {
-    // does user want to play?
-    if (userConfirm === true) {
-        const getNumber = parseInt(prompt("Please enter a number."));
-        // checks number data type
-        if (!isNaN(getNumber) && typeof getNumber === "number") {
-            // check if number is even or odd
-            if (getNumber % 2 === 0) {
-                alert("The number is even.")
-            }else {
-                alert("The number is odd.")
-            }
-            alert(getNumber + 100)
-            alert(Math.sign(getNumber))
-        }
+//Refactor using functions
+let userConfirmation = confirm("Would you like to enter a number?")
 
+if(userConfirmation) {
+    let userInput = parseFloat(prompt("Enter a number."))
+    if(isNan(userInput)) {
+        alert("You didn't input a number.")
+    }else {
+        alert(isEvenOdd(userInput))
+        alert(addOneHundred(userInput))
+        alert(posNeg(userInput))
     }
-    console.log(userConfirm)
+}
+function isEvenOdd(num) {
+    if(num % 2 === 0) {
+        return `${num} is an even number.`
+    }else {
+        return `${num} is an odd number.`
+    }
 }
 
-console.log(userNum())
+//add 100
+function addOneHundred(num) {
+    return `${num} + 100 is ${num + 100}`
+}
 
+//pos or negative
+function posNeg(num) {
+    if(num > 0){
+        return `${num} is a positive number.`
+    }else if (num < 0) {
+        return `${num} is a negative number.`
+    }
+}
