@@ -15,3 +15,9 @@ function capitalizeFirstLetter(string) {
 }
 
 console.log(capitalizeFirstLetter("brittany"))
+
+function largestNum(num1,num2,num3) {
+    return Math.max(num1,num2,num3);
+}
+
+console.log(largestNum(4,5,7))
