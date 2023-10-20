@@ -35,7 +35,7 @@ for(let i = 4; i <= names.length; i++) {
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
-names.forEach(names => console.log(`Name: ${names}.`))
+names.forEach(names => console.log(`Name: ${names}`))
     /**
      * TODO:
      * Create the following three functions, each will accept an array and
@@ -50,11 +50,20 @@ names.forEach(names => console.log(`Name: ${names}.`))
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
-    function returnsFirst(names) {
-
-        console.log('The first name is: ' + names[0])
-        console.log('The name is: ' + names[1])
-        console.log('The name is: ' + names[3])
+    function returnsFirst(arr) {
+        return arr[0]
     }
-    returnsFirst(names)
+
+    function returnSecond(arr) {
+        return arr[1]
+    }
+
+    function returnLast(arr) {
+        return arr[3]
+    }
+
+    console.log(returnsFirst(names))
+    console.log(returnSecond(names))
+    console.log(returnLast(names))
+
 })();
