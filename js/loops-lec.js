@@ -76,33 +76,35 @@
 // }
 
 //Breaking out of a loop
-for(let i = 0; i < 100; i += 5) {
+// for(let i = 0; i < 100; i += 5) {
+//     console.log(i)
+//     // break;
+//     // console.log("Snippet never reached")
+// }
+//
+// for(let i = 0; i < 100; i += 5) {
+//     console.log(i)
+//     if (i === 50) {
+//         break;
+//     }
+// }
+//
+// // Continue the Next Iteration of a Loop
+// for(let i = 1; i <= 5; i++) {
+//     if (i === 3) {
+//         continue;
+//     }
+//
+//     console.log(i)
+// }
+
+// for(let i = 1; i < 100; i++){
+//     if (i % 2 === 0) {
+//         continue;
+//     }
+//     console.log('Here is a lovely even number' + i);
+// }
+// //continue is like skipping the iteration continue 3...skips 3.
+for (var i = 1;  i <= 10; i++) {
     console.log(i)
-    // break;
-    // console.log("Snippet never reached")
 }
-
-for(let i = 0; i < 100; i += 5) {
-    console.log(i)
-    if (i === 50) {
-        break;
-    }
-}
-
-// Continue the Next Iteration of a Loop
-for(let i = 1; i <= 5; i++) {
-    if (i === 3) {
-        continue;
-    }
-
-    console.log(i)
-}
-
-for(let i = 1; i < 100; i++){
-    if (i % 2 === 0) {
-        continue;
-    }
-    console.log('Here is a lovely even number' + i);
-}
-//continue is like skipping the iteration continue 3...skips 3.
-
