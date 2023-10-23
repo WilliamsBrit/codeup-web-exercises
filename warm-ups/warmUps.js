@@ -34,11 +34,17 @@
 //
 //  } while (num >= 0)
 
-function isEven() {
-    for (let i = 1; i < 100; i++) {
-        if (i % 2 === 0) {
-            console.log(i)
-        }
-    }
-}
-isEven()
+// function isEven() {
+//     for (let i = 1; i < 100; i++) {
+//         if (i % 2 === 0) {
+//             console.log(i)
+//         }
+//     }
+// }
+// isEven()
+
+
+    const faveMovies = ["The Grinch", "Friday", "How To Lose A Guy in 10 Days", "Nightmare Before Christmas", "Coraline"]
+    faveMovies.sort()
+
+    faveMovies.forEach(movies => console.log(`${movies}`));
