@@ -48,3 +48,26 @@
     faveMovies.sort()
 
     faveMovies.forEach(movies => console.log(`${movies}`));
+
+
+const cars = [
+    {
+        make : "Toyota",
+        model : "Camry",
+        color :  "red"
+    },
+    {
+        make : "Ford",
+        model : "Explorer",
+        color : "blue"
+    },
+    {
+        make: "Dodge",
+        model :"Charger",
+        color : "orange"
+    }
+
+]
+for (let car of cars) {
+    console.log(`Make: ${car.make}  Model : ${car.model}   Color: ${car.color}`)
+}
