@@ -1,5 +1,100 @@
 h1 {
-    color: purple; /* single line comment */
+    color: black; /* single line comment */
     text-decoration: underline;
 }
 
+.fancy-header {
+    text-align: center;
+}
+
+header {
+    color: lightcoral;
+    text-decoration: underline;
+    text-align: center;
+}
+
+body {
+    background-color: wheat;
+    background-image: url("https://img.freepik.com/premium-photo/modern-soft-luxury-texture-white-light-gray-with-smooth-clean-subtle-background-illustration-wide-angle-format-banner_685067-3849.jpg?w=1060");
+    background-size: cover;
+    font-family: "Arial Black";
+    background-repeat: no-repeat;
+}
+
+ol,ul {
+    list-style: circle;
+
+}
+
+table {
+    border: 1px solid lightcoral;
+    margin-left: 675px
+}
+
+td {
+    border: 1px solid;
+    border-color: lightcoral;
+    padding: 10px;
+}
+
+tr{
+    font-family: "American Typewriter"
+}
+
+.products {
+    text-align: center;
+}
+
+.vision{
+    text-align: center;
+}
+
+.photos {
+   margin-left: 350px;
+}
+
+footer {
+    text-align: center;
+}
+
+.core {
+    margin-left: 450px;
+}
+
+.process {
+    margin-left: 750px;
+    margin-top: -140px;
+}
+
+.vision2020 {
+    margin-left: 1050px;
+    margin-top: -140px;
+
+}
+#guarantee {
+    text-align: center;
+}
+
+a:link {
+    color:red;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color: lightcoral;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
+
+hr {
+    border: 2px solid;
+
+}
