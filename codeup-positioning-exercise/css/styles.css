@@ -21,14 +21,14 @@ body {
     bottom: 2%;
     width: 100%;
     z-index: 2;
-    top: 42vw;
+    top: 70%;
 }
 .wave2{
     position: absolute;
     bottom: -10px;
     width:100%;
     left:-2px;
-    z-index: 2;
+
 }
 .lines{
     position: absolute;
@@ -55,11 +55,12 @@ body {
 }
 .cancel{
     position: absolute;
-    top: -.5vw;
+    top: -2%;
     right: -.5vw;
     border-radius: 100%;
     padding: 10px;
     background-color: white;
+
 }
 
 .container.login h1 {
@@ -125,7 +126,6 @@ button.btn.btn-login {
 .register{
     position: relative;
     z-index: 2;
-    margin: auto
-;
+    margin: auto;
 
 }

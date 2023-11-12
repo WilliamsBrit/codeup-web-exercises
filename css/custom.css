@@ -1,0 +1,104 @@
+/*@media screen and (min-width: 500px){*/
+*{
+        box-sizing: border-box;
+        margin:0;
+        padding:0;
+}
+.container {
+    margin: auto;
+}
+.jumbotron {
+    background-image: url("../img/pizza.png");
+    background-repeat: no-repeat;
+    height: 346px;
+    background-size: cover;
+}
+
+.d-flex {
+    position: absolute;
+    left: 21%;
+    margin:auto;
+}
+.btn {
+    width: 100%;
+}
+
+.badge.text-bg-primary{
+    border-radius: 50%;
+}
+
+.badge.text-bg-secondary{
+    border-radius: 50%;
+    margin: 2px;
+}
+
+.badge.text-bg-third {
+    border-radius:50%;
+}
+.card{
+    width: 100%;
+    border: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.card-header:first-child {
+    background: dodgerblue;
+    color: white;
+
+}
+.card3 {
+    padding-bottom: 10px;
+}
+.dropdown {
+    position: relative;
+}
+.list-group-item:first-child{
+    position: relative;
+    background: #f7f7f7;
+    margin:5px;
+
+}
+.list-group {
+    margin: 10px;
+}
+
+.list-group-item{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 4px;
+}
+.welcome-pizza {
+    display: flex;
+    position:relative;
+    justify-content: center;
+    background: white;
+    opacity: 60%;
+    top:40%;
+    align-self: center;
+
+}
+
+.build {
+    padding-top: 1em;
+    padding-left: 10px;
+}
+
+.nav.nav-tabs {
+    padding-left: 10px;
+}
+
+.list-group-item2{
+    background: #f7f7f7;
+}
+.btn.choose-next {
+    position: relative;
+    margin: auto;
+    background: dodgerblue;
+    width: 10%;
+    left: 87%;
+    color: white;
+}
