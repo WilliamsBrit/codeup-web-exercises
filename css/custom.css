@@ -102,3 +102,6 @@ select {
     left: 87%;
     color: white;
 }
+ card-body {
+     margin-left: -10px;
+ }
