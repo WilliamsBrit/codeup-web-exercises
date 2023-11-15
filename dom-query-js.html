@@ -34,35 +34,55 @@
 <script>
     "use strict";
 
+    const mainHeader= document.querySelector('#main-header')
+    mainHeader.addEventListener("click",() => mainHeader.style.backgroundColor = "pink");
 
-    const button1 = document.getElementById("btn1");
-    const header = document.getElementById("main-header");
-    const listener = () => header.innerHTML = "Javascript is cool"
-    button1.addEventListener("click", listener)
 
-    const button2 = document.getElementById("btn1");
-    const subHeader = document.getElementById("sub-header");
-    const listener2 = () => subHeader.style.color = "blue";
-    button2.addEventListener("click", listener2)
+    const fontSize = document.querySelector('p')
+    fontSize.addEventListener("dblclick",() => fontSize.style.fontSize = "18px");
 
-    const button3 = document.getElementById("btn3");
-    const listItems = document.getElementsByTagName("li");
-    const listener3 = () => {
-        for (let i = 0; i < listItems.length; i++) {
-            if ([i] % 2 !== 0) {
-                listItems[i].setAttribute("style", "color: grey")
-            }
-            if (listItems[i].getAttribute("data-dbid") === "1") {
-                listItems[i].setAttribute("style", "color:blue")
-            }
-        }
+    const colorChange = document.querySelectorAll("li");
+
+    for(let color of colorChange) {
+        color.addEventListener("mouseenter",() => color.style.color = "red");
+        color.addEventListener("mouseleave",() => color.style.color = "black");
     }
-    button3.addEventListener("click", listener3)
 
-    const button4 = document.getElementById("btn4")
-    const subParagraph = document.getElementsByClassName("sub-paragraph")
-    const listener4 = () => subParagraph[0].innerHTML = "Mission Accomplished!"
-    button4.addEventListener("click", listener4)
+
+
+
+    // ---------------------------------------------------------Exercise 2 Begins Below----------------------------------------------
+    //
+    // const button1 = document.getElementById("btn1");
+    // const header = document.getElementById("main-header");
+    // const listener = () => header.innerHTML = "Javascript is cool"
+    // button1.addEventListener("click", listener)
+    //
+    // const button2 = document.getElementById("btn1");
+    // const subHeader = document.getElementById("sub-header");
+    // const listener2 = () => subHeader.style.color = "blue";
+    // button2.addEventListener("click", listener2)
+    //
+    // const button3 = document.getElementById("btn3");
+    // const listItems = document.getElementsByTagName("li");
+    // const listener3 = () => {
+    //     for (let i = 0; i < listItems.length; i++) {
+    //         if ([i] % 2 !== 0) {
+    //             listItems[i].setAttribute("style", "color: grey")
+    //         }
+    //         if (listItems[i].getAttribute("data-dbid") === "1") {
+    //             listItems[i].setAttribute("style", "color:blue")
+    //         }
+    //     }
+    // }
+    // button3.addEventListener("click", listener3)
+    //
+    // const button4 = document.getElementById("btn4")
+    // const subParagraph = document.getElementsByClassName("sub-paragraph")
+    // const listener4 = () => subParagraph[0].innerHTML = "Mission Accomplished!"
+    // button4.addEventListener("click", listener4)
+
+    // ---------------------------------------------------------Exercise 1 Begins Below----------------------------------------------
     // // TODO: Uncomment next line and get the main header element by id
     // const mainHeader = document.getElementById("main-header");
     //
