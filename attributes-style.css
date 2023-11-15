@@ -38,16 +38,15 @@
     background-color: #0056b3;
 }
 
-.profile-desc {
-    color: black;
-    font-family: Arial, sans-serif;
-}
+/*.profile-desc {*/
+/*    color: black;*/
+/*    font-family: Arial, sans-serif;*/
+/*}*/
 
-/* Define the new styles for the updated class */
+ /*Define the new styles for the updated class */
 .updated-profile-desc {
     color: red;
-    font-family: 'Times New Roman', serif;
-}
+    font-family: Arial, sans-serif;}
 
 /* Define the initial styles for the profile-card class */
 .profile-card {
