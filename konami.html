@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konami Code Firework Effect</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #smoke {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+    }
+
+    #konamiCodeText {
+      color: white;
+      font-size: 24px;
+      text-align: center;
+      margin-top: 40vh;
+      display: none;
+    }
+
+    #fireworks-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .firework {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #ffcc00;
+      border-radius: 50%;
+      animation: explode 1s ease-out;
+    }
+
+    @keyframes explode {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(10);
+        opacity: 0;
+      }
+    }
+
+    .key-press-animation {
+      animation: keyPressAnimation 0.3s ease-in-out;
+    }
+
+    @keyframes keyPressAnimation {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+<div id="smoke"></div>
+<div id="konamiCodeText">Konami Code Activated!</div>
+<div id="fireworks-container"></div>
+
+<script>
+  // Konami Code
+  const konamiCode = [
+    'ArrowUp', 'ArrowUp',
+    'ArrowDown', 'ArrowDown',
+    'ArrowLeft', 'ArrowRight',
+    'ArrowLeft', 'ArrowRight',
+    'b', 'a'
+  ];
+
+  let enteredCode = [];
+
+  function checkKonamiCode() {
+    if (enteredCode.toString() === konamiCode.toString()) {
+      activateFireworkEffect();
+    }
+  }
+
+  function activateFireworkEffect() {
+    const smoke = document.getElementById('smoke');
+    const konamiCodeText = document.getElementById('konamiCodeText');
+    const fireworksContainer = document.getElementById('fireworks-container');
+
+    smoke.style.display = 'block';
+    konamiCodeText.style.display = 'block';
+
+    // Create more fireworks
+    for (let i = 0; i < 20; i++) {
+      createFirework();
+    }
+
+    setTimeout(() => {
+      smoke.style.display = 'none';
+      konamiCodeText.style.display = 'none';
+      fireworksContainer.innerHTML = ''; // Clear fireworks
+      enteredCode = []; // Reset entered code
+    }, 5000); // Adjust the duration of the smoke and fireworks effect
+  }
+
+  function createFirework() {
+    const fireworksContainer = document.getElementById('fireworks-container');
+    const firework = document.createElement('div');
+    firework.classList.add('firework');
+
+    // Set random position
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+
+    firework.style.left = `${x}px`;
+    firework.style.top = `${y}px`;
+
+    fireworksContainer.appendChild(firework);
+  }
+
+  window.addEventListener('keydown', (event) => {
+    enteredCode.push(event.key);
+
+    // Ensure entered code does not exceed the length of the Konami Code
+    enteredCode = enteredCode.slice(-konamiCode.length);
+
+    // Add animation class to the body for key press animation
+    document.body.classList.add('key-press-animation');
+
+    // Remove animation class after the animation is complete
+    setTimeout(() => {
+      document.body.classList.remove('key-press-animation');
+    }, 300);
+
+    checkKonamiCode();
+  });
+</script>
+
+</body>
+</html>
+
+
