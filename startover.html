@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map Exercise</title>
+
+    <!--    Mapbox CSS-->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css" rel="stylesheet">
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--    Custom CSS-->
+    <link href="css/weather-map.css" rel="stylesheet">
+</head>
+
+<body>
+
+<h1 style="text-align: center">Welcome to Weather Watch</h1>
+<h3 style="text-align: center">Where We Watch The Weather For You</h3>
+
+<!--Enter City Form/Button-->
+<form id="weather-form" style="text-align: center">
+    <label for="cityName">City Name</label>
+    <input type="text" id="cityName" name="cityName" value="" required placeholder="Please Enter A City">
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<!--Weather cards entered here-->
+        <div id="weatherCards" class = "row">
+
+        </div>
+
+<div id="map"></div>
+
+<div id="forecast" class="d-flex justify-content-center width-100"></div>
+
+<script src="js/keys.js"></script>
+<script src="js/weather-map.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js"></script>
+<script>
+    mapboxgl.accessToken = `${MAPBOX_API_KEY}`;
+const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    center: [-74.5, 40], // starting position [lng, lat]
+    zoom: 9 // starting zoom
+});
+
+    // Create a new marker at the clicked coordinates
+    const marker = new mapboxgl.Marker(
+        {
+            draggable: true,
+            color: "orange"
+        })
+
+    map.on("click", addMarker)
+
+    function addMarker(event) {
+        console.log(event)
+        let lat = event.lngLat.lat;
+        let lng = event.lngLat.lng;
+
+        getWeatherData(lng, lat)
+        let deleteData = document.getElementById("forecast")
+        deleteData.innerHTML = ""
+        marker.setLngLat([lng, lat]).addTo(map);
+
+    }
+
+        getWeatherData()
+
+</script>
+
+</body>
+</html>

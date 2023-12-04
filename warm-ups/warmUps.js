@@ -124,17 +124,41 @@
 //             console.log(i)
 //         }
 //     }
+//
+// fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+//     .then(res => res.json())
+//     .then(data => {
+//         createPokemonElements(data)
+//     })
+//
+// function createPokemonElements(data) {
+// const image = document.createElement("img");
+// const container = document.querySelector(".container")
+// image.src = data.sprites.front_female;
+// container.appendChild(image);
+// image.style.height = "200px";
+// }
 
-fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
-    .then(res => res.json())
-    .then(data => {
-        createPokemonElements(data)
+    function diagonalDifference(arr) {
+        // Write your code here
+        let LRarray = [];
+        let RLarray = [];
+        let LRtotal = 0
+        arr.map((num, index) => {
+            LRarray.push(num[index]);
+
+        })
+        arr.reverse().map((num, index) => {
+        RLarray.push(num[index])
     })
+        RLarray.forEach((num => RLtotal += num))
+        return Math.abs(LRtotal = RLtotal)
+    }
 
-function createPokemonElements(data) {
-const image = document.createElement("img");
-const container = document.querySelector(".container")
-image.src = data.sprites.front_female;
-container.appendChild(image);
-image.style.height = "200px";
-}
+        diagonalDifference([
+                                    [11,2,4],
+                                    [4,5,6],
+                                    [10,8,-12]]
+        )
+
+

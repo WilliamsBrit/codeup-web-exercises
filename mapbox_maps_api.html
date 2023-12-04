@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Favorite Restaurant</title>
+  <!-- Mapbox CSS -->
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    #map {
+      /* the width and height may be set to any size */
+      width: 100%;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+
+<h1 style="display:flex; justify-content: center">Giordano's Pizza</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<!-- Mapbox JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+<!-- Custom JS -->
+<script>
+  mapboxgl.accessToken = MAPBOX_API_KEY;
+  // creating a new map
+  const map = new mapboxgl.Map({
+    // setting the location for my map depending on the id in my html
+    container: 'map', // container ID
+    // this is setting my mapboxgl styling
+    style: 'mapbox://styles/mapbox/streets-v12', // style URL
+    // this decides how zoomed in my map is
+    zoom: 12, // starting zoom
+    // this add the center to my map using the lng, lat
+    center: [-87.6298, 41.8781] // [lng, lat]
+  });
+
+  // setting a marker object
+
+  // const marker = new mapboxgl.Marker()
+  //         // adding marker to specific [lng, lat]
+  //         .setLngLat([-87.6298, 41.8781])
+  //         // adding marker to map
+  //         .addTo(map);
+  //
+  // const marker2 = new mapboxgl.Marker()
+  //         // adding marker to specific [lng, lat]
+  //         .setLngLat([-87.6279646, 41.8781])
+  //         // adding marker to map
+  //         .addTo(map);
+  //
+  // const marker3 = new mapboxgl.Marker()
+  //         // adding marker to specific [lng, lat]
+  //         .setLngLat([-87.62349062885487, 41.752666214105915])
+  //         // adding marker to map
+  //         .addTo(map);
+
+  // setting a popup object
+
+  // const pizzaPopup = new mapboxgl.Popup()
+  //         .setHTML("<p>Welcome to Giordano's!</p>");
+  // const edPopup = new mapboxgl.Popup()
+  //         .setHTML("<p>Mind Your Manners At Ed Debevic's!</p>");
+  // const babaPopup = new mapboxgl.Popup()
+  //         .setHTML("<p>Mind Your Manners At Ed Debevic's!</p>");
+  //
+  // marker.setPopup(pizzaPopup);
+  // marker2.setPopup(edPopup);
+  // marker3.setPopup(babaPopup);
+
+  const locations = [
+    { lngLat: [-87.6298, 41.8781], popupContent: "<p>Welcome to Giordano's!</p>" },
+    { lngLat: [-87.6279646, 41.8781], popupContent: "<p>Mind Your Manners At Ed Debevic's!</p>" },
+    { lngLat: [-87.62349062885487, 41.752666214105915], popupContent: "<p>Welcome to Baba's!</p>" }
+  ];
+
+ // create markers and popups
+  locations.forEach(location => {
+    const marker = new mapboxgl.Marker()
+            .setLngLat(location.lngLat)
+            .addTo(map);
+
+    const popup = new mapboxgl.Popup()
+            .setHTML(location.popupContent);
+
+    marker.setPopup(popup);
+  })
+
+
+</script>
+</body>
+</html>
